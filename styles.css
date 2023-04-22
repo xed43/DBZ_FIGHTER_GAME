@@ -1,0 +1,153 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+body {
+  text-align: center;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+  align-items: center;
+
+  height: 100vh;
+  width: 100vw;
+  background: url("https://i.ytimg.com/vi/AD52Zfn94T0/maxresdefault.jpg");
+}
+
+button {
+  background: whitesmoke;
+  cursor: pointer;
+  box-shadow: 0 3px 5px black;
+  display: none;
+
+  margin-top: 25rem;
+}
+
+#startover {
+  width: 300px;
+  height: 400px;
+  border-radius: 100px;
+  border: none;
+  font-size: 2rem;
+  border: 10px solid midnightblue;
+  outline: 1px solid white;
+}
+
+#startover:hover {
+  border: 10px solid green;
+}
+
+button:hover {
+  color: black;
+}
+.show-btn {
+  display: block;
+}
+
+.message-container {
+  background: midnightblue;
+  display: flex;
+  width: 100%;
+  padding: 30px;
+  font-size: 10px;
+  justify-content: center;
+  align-items: end;
+}
+
+#counter {
+  font-size: 3rem;
+  width: 100%;
+  color: whitesmoke;
+  text-transform: uppercase;
+}
+
+#gameover {
+  opacity: 0;
+  font-size: 6rem;
+  padding: 10px;
+  top: 15rem;
+  background: black;
+  color: red;
+  position: absolute;
+  width: 100%;
+  text-transform: uppercase;
+}
+
+#gameover.active {
+  opacity: 0.8;
+}
+
+#level {
+  height: 1000px;
+  width: 80vw;
+}
+
+#goku {
+  border: 1px solid black;
+  background: url("https://i.pinimg.com/originals/fc/d5/ef/fcd5efd43c69339a8b314192d9817c18.png")
+    center center / contain;
+  background-repeat: no-repeat;
+  height: 250px;
+  width: 250px;
+  position: relative;
+  top: 300px;
+  border: none;
+}
+
+#freeza {
+  border: 1px solid black;
+  background: url("assets/favpng_frieza-dragon-ball-z-dokkan-battle-goku-gohan-majin-buu.png")
+    center top / contain;
+  background-repeat: no-repeat;
+  height: 250px;
+  width: 250px;
+  position: absolute;
+  top: 400px;
+  left: 1500px;
+  border: none;
+  animation: attack 1.5s linear infinite;
+}
+
+.disappear {
+  opacity: 0;
+}
+.animate {
+  animation: jump 1.3s linear;
+}
+
+@keyframes jump {
+  0% {
+    top: 150px;
+  }
+  30% {
+    top: 20px;
+  }
+  70% {
+    top: 20px;
+  }
+  100% {
+    top: 150px;
+  }
+}
+
+@keyframes attack {
+  0% {
+    left: 1200px;
+  }
+  100% {
+    left: -50px;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

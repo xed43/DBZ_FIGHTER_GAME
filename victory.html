@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" onClick="jump()">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>DBZ_Fight</title>
+</head>
+<body>
+  <audio class="audio" controls >
+    <source src="assets/audio/fight_music.mp3" type="audio/mp3" />
+  </audio>
+
+  <div class="message-container">
+    <span id="counter">you've jumped: 0</span>
+    <span id="gameover">Game Over</span>
+  </div>
+  <button id="startover" onClick="window.location.reload()">
+    Try Again?
+  </button>
+
+  <div id="earth">
+
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

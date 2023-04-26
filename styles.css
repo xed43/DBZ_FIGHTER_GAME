@@ -11,10 +11,18 @@ body {
   flex-flow: column;
   justify-content: space-evenly;
   align-items: center;
-
+  text-align: center;
   height: 100vh;
   width: 100vw;
-  background: url("https://i.ytimg.com/vi/AD52Zfn94T0/maxresdefault.jpg");
+  background: url("https://i.ytimg.com/vi/AD52Zfn94T0/maxresdefault.jpg") center
+    top / cover;
+  background-repeat: no-repeat;
+  overflow-y: hidden;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
 }
 
 button {
@@ -22,8 +30,49 @@ button {
   cursor: pointer;
   box-shadow: 0 3px 5px black;
   display: none;
-
   margin-top: 25rem;
+}
+
+audio {
+  opacity: 0;
+}
+
+.credits {
+  position: absolute;
+  color: white;
+  font-size: 1.3rem;
+  width: 80vw;
+  left: 50px;
+  overflow: hidden;
+  opacity: 0;
+}
+.scroll {
+  height: 100%;
+  width: 100%;
+  transform: translateY(100%);
+  animation: my-animation 20s linear infinite;
+  z-index: 999;
+}
+
+.show-credits {
+  position: absolute;
+  color: white;
+  font-size: 1.3rem;
+  width: 95vw;
+  left: 15px;
+  overflow: hidden;
+  opacity: 1;
+  z-index: 9999;
+  margin: 0 auto;
+}
+
+@keyframes my-animation {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(-100%);
+  }
 }
 
 #startover {
@@ -50,6 +99,7 @@ button:hover {
 .message-container {
   background: midnightblue;
   display: flex;
+  flex-flow: column;
   width: 100%;
   padding: 30px;
   font-size: 10px;
@@ -64,15 +114,28 @@ button:hover {
   text-transform: uppercase;
 }
 
+#count-down {
+  font-size: 12rem;
+  color: white;
+  display: none;
+}
+
+.show-count-down {
+  font-size: 12rem;
+  color: white;
+  display: block;
+}
+
 #gameover {
   opacity: 0;
   font-size: 6rem;
-  padding: 10px;
+  padding: 30px;
   top: 15rem;
+  margin-right: -30px;
   background: black;
   color: red;
   position: absolute;
-  width: 100%;
+  width: 100vw;
   text-transform: uppercase;
 }
 
@@ -81,8 +144,8 @@ button:hover {
 }
 
 #level {
-  height: 1000px;
-  width: 80vw;
+  height: 100%;
+  width: 100%;
 }
 
 #goku {
@@ -90,11 +153,22 @@ button:hover {
   background: url("https://i.pinimg.com/originals/fc/d5/ef/fcd5efd43c69339a8b314192d9817c18.png")
     center center / contain;
   background-repeat: no-repeat;
-  height: 250px;
-  width: 250px;
+  height: 20vh;
+  width: 20vw;
   position: relative;
   top: 300px;
   border: none;
+}
+
+#goku_bye {
+  width: 15vw;
+  height: 15vh;
+  position: absolute;
+  top: 400px;
+  margin: 30px;
+  background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNoFeqd0nuKtOeQMBOoJoqaqIHAtQRK32JhQ&usqp=CAU")
+    center center / cover;
+  display: none;
 }
 
 #freeza {
@@ -102,43 +176,60 @@ button:hover {
   background: url("assets/favpng_frieza-dragon-ball-z-dokkan-battle-goku-gohan-majin-buu.png")
     center top / contain;
   background-repeat: no-repeat;
-  height: 250px;
-  width: 250px;
+  height: 15vh;
+  width: 15vw;
   position: absolute;
-  top: 400px;
+  top: 440px;
   left: 1500px;
   border: none;
   animation: attack 1.5s linear infinite;
+}
+
+.victory {
+  color: red;
+  font-size: 4rem;
+  position: absolute;
+  top: 120px;
+  width: 100vw;
+  height: 30vh;
+  display: none;
+}
+
+.show {
+  color: red;
+  font-size: 10vw;
+  margin: 0;
+  display: block;
 }
 
 .disappear {
   opacity: 0;
 }
 .animate {
-  animation: jump 1.3s linear;
+  animation: jump 1s linear;
 }
 
 @keyframes jump {
   0% {
-    top: 150px;
+    top: 120px;
   }
   30% {
-    top: 20px;
+    top: 100px;
   }
   70% {
-    top: 20px;
+    top: 100px;
   }
   100% {
-    top: 150px;
+    top: 120px;
   }
 }
 
 @keyframes attack {
   0% {
-    left: 1200px;
+    left: 800px;
   }
   100% {
-    left: -50px;
+    left: 0px;
   }
 }
 
